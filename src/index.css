@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-bg: #f8fafc;
+    --brand-sidebar: #1e293b;
+    --brand-accent: #3b82f6;
+    --brand-success: #22c55e;
+    --brand-danger: #ef4444;
+    --brand-border: #e2e8f0;
+    --brand-text: #0f172a;
+    --brand-muted: #64748b;
+  }
+
+  body {
+    background-color: var(--brand-bg);
+    color: var(--brand-text);
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+.drl-snippet {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  background: #0f172a;
+  color: #94a3b8;
+}

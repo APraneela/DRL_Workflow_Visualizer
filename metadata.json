@@ -1,0 +1,6 @@
+{
+  "name": "DRL Workflow Visualizer",
+  "description": "An interactive tool to parse Drools Rule Language (DRL) files and visualize job application workflows with stage selection and path analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
