@@ -403,20 +403,20 @@ export default function App() {
             <section>
               <h3 className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest mb-4">Workflow Stats</h3>
               <div className="grid grid-cols-3 gap-2 mb-4">
-                <div className="bg-slate-700/30 p-3 rounded-xl border border-slate-700/50">
-                  <div className="text-lg font-bold text-white">{totalRulesCount}</div>
-                  <div className="text-[8px] text-slate-400 font-bold uppercase mt-1">Total Steps</div>
+                <div className="bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50 flex flex-col items-center justify-center">
+                  <div className="text-xl font-bold text-white leading-none">{totalRulesCount}</div>
+                  <div className="text-[7px] text-slate-400 font-bold uppercase tracking-tighter mt-1.5 text-center">Total Steps</div>
                 </div>
-                <div className="bg-slate-700/30 p-3 rounded-xl border border-slate-700/50">
-                  <div className="text-lg font-bold text-white">{totalConditionsCount}</div>
-                  <div className="text-[8px] text-slate-400 font-bold uppercase mt-1">Conditions</div>
+                <div className="bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50 flex flex-col items-center justify-center">
+                  <div className="text-xl font-bold text-white leading-none">{totalConditionsCount}</div>
+                  <div className="text-[7px] text-slate-400 font-bold uppercase tracking-tighter mt-1.5 text-center">Conditions</div>
                 </div>
-                <div className="bg-slate-700/30 p-3 rounded-xl border border-slate-700/50">
-                  <div className="text-lg font-bold text-white">{workflowGroups.length}</div>
-                  <div className="text-[8px] text-slate-400 font-bold uppercase mt-1">Stages</div>
+                <div className="bg-slate-800/40 p-2.5 rounded-lg border border-slate-700/50 flex flex-col items-center justify-center">
+                  <div className="text-xl font-bold text-white leading-none">{workflowGroups.length}</div>
+                  <div className="text-[7px] text-slate-400 font-bold uppercase tracking-tighter mt-1.5 text-center">Stages</div>
                 </div>
               </div>
-              <p className="text-[8px] text-slate-500 mb-6 italic px-1">
+              <p className="text-[7px] text-slate-500 mb-6 italic px-1 opacity-80">
                 * Analysis reflects the entire DRL rulesheet content.
               </p>
 
