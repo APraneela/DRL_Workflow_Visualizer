@@ -141,6 +141,16 @@ export default function App() {
     return [...new Set(conditions)];
   }, [workflowGroups]);
 
+  const totalConditionsCount = useMemo(() => {
+    return workflowGroups.reduce((acc, g) => {
+      return acc + g.transitions.filter(t => t.hasCondition && t.conditions.trim()).length;
+    }, 0);
+  }, [workflowGroups]);
+
+  const totalRulesCount = useMemo(() => {
+    return workflowGroups.reduce((acc, g) => acc + g.transitions.length, 0);
+  }, [workflowGroups]);
+
   const handleCopyConditions = () => {
     if (allConditions.length === 0) return;
     
@@ -392,16 +402,23 @@ export default function App() {
 
             <section>
               <h3 className="text-[10px] font-extrabold text-slate-500 uppercase tracking-widest mb-4">Workflow Stats</h3>
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-slate-700/30 p-4 rounded-xl border border-slate-700/50">
-                  <div className="text-2xl font-bold text-white">{currentGroup?.transitions.length || 0}</div>
-                  <div className="text-[9px] text-slate-400 font-bold uppercase mt-1">Rules</div>
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                <div className="bg-slate-700/30 p-3 rounded-xl border border-slate-700/50">
+                  <div className="text-lg font-bold text-white">{totalRulesCount}</div>
+                  <div className="text-[8px] text-slate-400 font-bold uppercase mt-1">Total Steps</div>
                 </div>
-                <div className="bg-slate-700/30 p-4 rounded-xl border border-slate-700/50">
-                  <div className="text-2xl font-bold text-white">{new Set(currentGroup?.transitions.map(t => t.fromState)).size}</div>
-                  <div className="text-[9px] text-slate-400 font-bold uppercase mt-1">States</div>
+                <div className="bg-slate-700/30 p-3 rounded-xl border border-slate-700/50">
+                  <div className="text-lg font-bold text-white">{totalConditionsCount}</div>
+                  <div className="text-[8px] text-slate-400 font-bold uppercase mt-1">Conditions</div>
+                </div>
+                <div className="bg-slate-700/30 p-3 rounded-xl border border-slate-700/50">
+                  <div className="text-lg font-bold text-white">{workflowGroups.length}</div>
+                  <div className="text-[8px] text-slate-400 font-bold uppercase mt-1">Stages</div>
                 </div>
               </div>
+              <p className="text-[8px] text-slate-500 mb-6 italic px-1">
+                * Analysis reflects the entire DRL rulesheet content.
+              </p>
 
               {allConditions.length > 0 && (
                 <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-4">

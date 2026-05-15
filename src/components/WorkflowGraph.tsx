@@ -12,7 +12,7 @@ import ReactFlow, {
   useReactFlow,
   ReactFlowProvider
 } from 'reactflow';
-import 'reactflow/dist/style.css';
+//import 'reactflow/dist/style.css';
 import { Transition } from '../lib/drlParser';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
